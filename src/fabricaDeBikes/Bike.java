@@ -1,12 +1,16 @@
 package fabricaDeBikes;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 public class Bike {
 
 	// ATRIBUTOS
 
 	private String freio;
-	private String Cambio;
-	private String Quadro;
+	private String cambio;
+	private String quadro;
 	private double preco;
 	private double tamanho;
 	private String suspensao;
@@ -73,71 +77,175 @@ public class Bike {
 	}
 
 	public String getCambio() {
-		return Cambio;
+		return cambio;
 	}
 
 	public void setCambio(String cambio) {
-		Cambio = cambio;
+		cambio = cambio;
 	}
 
 	public String getQuadro() {
-		return Quadro;
+		return quadro;
 	}
 
 	public void setQuadro(String quadro) {
-		Quadro = quadro;
+		this.quadro = quadro;
 	}
 
 	// MÉTODOS
-	 
-	public String addquadro(int tipo) {
+
+	public String addQuadro(int tipo) {
 		if (tipo == 1) {
 			this.preco += 100;
+			this.quadro = "Alumínio";
 			return ("Quadro de Alumínio -- R$ 100,00.");
+
 		}
 		if (tipo == 2) {
 			this.preco += 50;
+			this.quadro = "Ferro";
+
 			return ("Quadro de Ferro R$ -- 50,00.");
 		}
 		if (tipo == 3) {
 			this.preco += 500;
+			this.quadro = "Fibra de Carbono";
 			return ("Quadro de fibra de Carbono -- R$ 500,00");
 		} else {
-			return ("Digite um tipo válido, letras minúscululas e sem acentos (fibra de carbono, ferro ou aluminio)");
+			return ("Digite o NÚMERO da opção desejada!");
 
 		}
 
 	}
 
-	public String addfreio(int tipo) {
+	public String addFreio(int tipo) {
 		if (tipo == 1) {
 			this.preco += 100;
+			this.freio = "Freios à disco hidráulico";
 			return ("Freios à disco hidráulico -- R$ 100,00.");
 		}
 		if (tipo == 2) {
 			this.preco += 50;
+			this.freio = "Freios Cantilever";
 			return ("Freios Cantilever -- R$  50,00.");
 		}
 		if (tipo == 3) {
 			this.preco += 500;
+			this.freio = "Freios V-Brake";
 			return ("Freios V-Brake -- R$ 500,00");
 		}
 
 		if (tipo == 4) {
 			this.preco += 100;
+			this.freio = "Freios Cantilever";
 			return ("Freios à disco mecânico -- R$ 100,00.");
 		} else {
-			return ("Digite um tipo válido, letras minúscululas e sem acentos (discohidraulico, discomecanico, vbrake ou cantilever)");
+			return ("Digite o NÚMERO da opção desejada!");
 
 		}
 
 	}
 
-	public String addcambio(int marchas) {
-		if (marchas == 18) {
+	public String addCambio(int marchas) {
+		if (marchas == 1) {
 			this.preco += 300;
+			this.cambio = "Cambio1";
 			return ("Cambio de 18 marchas -- R$ 300,00");
 		}
-		return ("nada");
+
+		if (marchas == 2) {
+			this.preco += 300;
+			this.cambio = "Cambio2";
+			return ("Cambio de 18 marchas -- R$ 300,00");
+		}
+		if (marchas == 3) {
+			this.preco += 300;
+			this.cambio = "Cambio3";
+			return ("Cambio de 18 marchas -- R$ 300,00");
+		}
+		if (marchas == 4) {
+			this.preco += 300;
+			this.cambio = "Cambio4";
+			return ("Cambio de 18 marchas -- R$ 300,00");
+		}
+		if (marchas == 5) {
+			this.preco += 300;
+			this.cambio = "Cambio5";
+			return ("Cambio de 18 marchas -- R$ 300,00");
+		}
+		return ("Digite o NÚMERO da opção desejada!");
+	}
+
+	public String addSuspensao(int s) {
+		if (s == 1) {
+			this.preco += 300;
+			this.suspensao = "Suspenção1";
+			return ("SUSP -- R$ 300,00");
+		}
+		if (s == 2) {
+			this.preco += 300;
+			this.suspensao = "Suspenção4";
+			return ("SUSP -- R$ 300,00");
+		}
+		if (s == 3) {
+			this.preco += 300;
+			this.suspensao = "Suspenção3";
+			return ("SUSP -- R$ 300,00");
+		}
+		if (s == 4) {
+			this.preco += 300;
+			this.suspensao = "Suspenção4";
+			return ("SUSP -- R$ 300,00");
+		}
+		if (s == 5) {
+			this.preco += 300;
+			this.suspensao = "Suspenção5";
+			return ("SUSP -- R$ 300,00");
+		} else {
+			return ("Digite o NÚMERO da opção desejada!");
+		}
+
+	}
+
+	public String addRoda(int r) {
+		if (r == 1) {
+			this.preco += 300;
+			this.roda = "Roda1";
+			return ("RODA -- R$ 300,00");
+		}
+		if (r == 2) {
+			this.preco += 300;
+			this.roda = "Roda2";
+			return ("RODA -- R$ 300,00");
+		}
+		if (r == 3) {
+			this.preco += 300;
+			this.roda = "Roda3";
+			return ("RODA -- R$ 300,00");
+		} else {
+			return ("Digite o NÚMERO da opção desejada!");
+		}
+
+	}
+
+	public String addPneu(int p) {
+		if (p == 1) {
+			this.preco += 300;
+			this.pneu = "Pneu1";
+			return ("PNEU -- R$ 300,00");
+		}
+		if (p == 2) {
+			this.preco += 300;
+			this.pneu = "Pneu2";
+			return ("PNEU -- R$ 300,00");
+		}
+		if (p == 3) {
+			this.preco += 300;
+			this.pneu = "Pneu3";
+			return ("PNEU -- R$ 300,00");
+		} else {
+			return ("Digite o NÚMERO da opção desejada!");
+		}
+
 	}
 }

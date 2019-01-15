@@ -1,7 +1,7 @@
 package fabricaDeBikes;
 
 import java.util.Scanner;
-
+import fabricaDeBikes.ListaDeProdutos;
 public class Menu {
 	public static void main(String[] args) {
 		System.out.println("Bem vindo ao sistema!");
@@ -23,24 +23,46 @@ public class Menu {
 				System.out.println("opcao 1 ---");
 				Pessoa p1 = new Pessoa();
 				System.out.println("Entre com seu nome: ");
-				String nome = selecao.next(); 
-				
-				while(!nome.matches("[a-zA-Z\\s]+")) {
+				String nome = selecao.next();
+
+				while (!nome.matches("[a-zA-Z\\s]+")) {
 					System.out.println("Nome contém caracteres inválidos");
 					nome = selecao.next();
 				}
-				
 				p1.setNome(nome);
-				
 				System.out.println("Entre com seu cpf: ");
 				String cpf = selecao.next();
-				while(!cpf.matches("[0-9]+")) {
+				while (!cpf.matches("[0-9]+")) {
 					System.out.println("Nome contém caracteres inválidos");
 					cpf = selecao.next();
 				}
-				
-				
 				p1.setCpf(selecao.next());
+				System.out.println("Iniciando montagem: ");
+				Bike b = new Bike();
+				
+				System.out.println();
+				b.addQuadro(selecao.nextInt());
+				
+				
+				System.out.println();
+				b.addFreio(selecao.nextInt());
+				
+				
+				System.out.println();
+				b.addCambio(selecao.nextInt());
+				
+				
+				System.out.println();
+				b.addSuspensao(selecao.nextInt());
+				
+				
+				System.out.println();
+				b.addRoda(selecao.nextInt());
+				
+				
+				System.out.println();
+				b.addPneu(selecao.nextInt());
+				
 				
 				var = false;
 				break;
