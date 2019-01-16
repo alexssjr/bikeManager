@@ -89,10 +89,10 @@ public class Menu {
 				System.out.println("Entre com seu cpf: ");
 				String cpf = selecao.next();
 				while (!cpf.matches("[0-9]+")) {
-					System.out.println("Nome contém caracteres inválidos");
+					System.out.println("CPF contém caracteres inválidos");
 					cpf = selecao.next();
 				}
-				p1.setCpf(selecao.next());
+				p1.setCpf(cpf);
 				System.out.println("Iniciando montagem: ");
 				Bike b = new Bike();
 
@@ -147,11 +147,11 @@ public class Menu {
 				String cnpj = selecao.next();
 
 				while (!cnpj.matches("[0-9]+")) {
-					System.out.println("Nome contém caracteres inválidos");
+					System.out.println("CNPJ contém caracteres inválidos");
 					cnpj = selecao.next();
 				}
 
-				e1.setCnpj(selecao.next());
+				e1.setCnpj(cnpj);
 				System.out.println("Iniciando montagem: ");
 				Bike b1 = new Bike();
 
