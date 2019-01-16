@@ -1,9 +1,5 @@
 package fabricaDeBikes;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
 public class Bike {
 
 	// ATRIBUTOS
@@ -81,7 +77,7 @@ public class Bike {
 	}
 
 	public void setCambio(String cambio) {
-		cambio = cambio;
+		this.cambio = cambio;
 	}
 
 	public String getQuadro() {
