@@ -1,29 +1,26 @@
 package fabricaDeBikes;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
-import fabricaDeBikes.ListaDeProdutos;
-
 public class Menu {
 	public static void main(String[] args) {
 
 		// DEFININDO LISTA DE PRODUTOS
 
-		List quadros = new ArrayList();
+		List<String> quadros = new LinkedList<String>();
 
-		List freios = new LinkedList();
+		List<String> freios = new LinkedList<String>();
 
-		List cambios = new LinkedList();
+		List<String> cambios = new LinkedList<String>();
 
-		List suspensoes = new LinkedList();
+		List<String> suspensoes = new LinkedList<String>();
 
-		List rodas = new LinkedList();
+		List<String> rodas = new LinkedList<String>();
 
-		List pneus = new LinkedList();
+		List<String> pneus = new LinkedList<String>();
 		
-		List kitacessorios = new LinkedList();
+		List<String> kitacessorios = new LinkedList<String>();
 
 		quadros.add("1- ksdjbf ");
 		quadros.add("2- asdfoihas");
@@ -65,6 +62,7 @@ public class Menu {
 		System.out.println("Bem vindo ao sistema!");
 		System.out.println("Entre com a opção para iniciar o sistema:");
 
+		@SuppressWarnings("resource")
 		Scanner selecao = new Scanner(System.in);
 		int opcao = 0;
 		boolean var = true;
@@ -121,6 +119,16 @@ public class Menu {
 				System.out.println("Escolha o Pneu desejado: ");
 				System.out.println(pneus);
 				b.addPneu(selecao.nextInt());
+				
+				System.out.println("Escolha o Kit de Acessórios desejado: ");
+				System.out.println(kitacessorios);
+				b.addKitacessorios(selecao.nextInt());
+				
+				
+				
+				//Impressão da nota fiscal
+				
+				System.out.println("!!!!Nota Fiscal!!!! \nComprador: "+ p1.getNome() + "\nCNPJ: " + p1.getCpf() + "\n!!!!Relação de Peças!!!!" + "\nQuadro: " + b.getQuadro() + "\nFreio: " + b.getFreio() + "\nCâmbio: "+ b.getCambio() + "\nSuspensão: " + b.getSuspensao() + "\nRoda: " + b.getRoda() + "\nPneus: " + b.getPneu() + "\nKit de Acessórios: " + b.getKitacessorios() + "\nPreço final: R$" + b.getPreco() + "\nObrigado pela preferência!");
 
 				var = false;
 				break;
@@ -179,7 +187,7 @@ public class Menu {
 				
 				//Impressão da nota fiscal
 				
-				System.out.println("##Nota Fiscal## \nComprador: "+ e1.getNome() + "\nCNPJ: " + e1.getCnpj() + "\nRelação de Peças" + "\nQuadro: " + b1.getQuadro() + "\nFreio: " + b1.getFreio() + "\nCâmbio: "+ b1.getCambio() + "\nSuspensão: " + b1.getSuspensao() + "\nRoda: " + b1.getRoda() + "\nPneus: " + b1.getPneu() + "\nKit de Acessórios: " + b1.getKitacessorios());
+				System.out.println("!!!!Nota Fiscal!!!! \nComprador: "+ e1.getNome() + "\nCNPJ: " + e1.getCnpj() + "\n!!!!Relação de Peças!!!!" + "\nQuadro: " + b1.getQuadro() + "\nFreio: " + b1.getFreio() + "\nCâmbio: "+ b1.getCambio() + "\nSuspensão: " + b1.getSuspensao() + "\nRoda: " + b1.getRoda() + "\nPneus: " + b1.getPneu() + "\nKit de Acessórios: " + b1.getKitacessorios() + "\nPreço final: R$" + b1.getPreco() + "\nObrigado pela preferência!");
 				
 				var = false;
 				break;
