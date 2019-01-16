@@ -3,6 +3,7 @@ package fabricaDeBikes;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
+
 public class Menu {
 	public static void main(String[] args) {
 
@@ -74,6 +75,8 @@ public class Menu {
 			System.out.print("Seleciona a opção: ");
 			opcao = selecao.nextInt();
 
+			try {				
+
 			switch (opcao) {
 			case 1:
 				System.out.println("Insira seus dados.");
@@ -88,11 +91,11 @@ public class Menu {
 				p1.setNome(nome);
 				System.out.println("Entre com seu cpf: ");
 				String cpf = selecao.next();
-				while (!cpf.matches("[0-9]+")) {
+				while (!cpf.matches("[0-9]{3}\\.?[0-9]{3}\\.?[0-9]{3}\\-?[0-9]{2}")) {
 					System.out.println("Nome contém caracteres inválidos");
 					cpf = selecao.next();
 				}
-				p1.setCpf(selecao.next());
+				p1.setCpf(cpf);
 				System.out.println("Iniciando montagem: ");
 				Bike b = new Bike();
 
@@ -124,11 +127,13 @@ public class Menu {
 				System.out.println(kitacessorios);
 				b.addKitacessorios(selecao.nextInt());
 				
-				
-				
 				//Impressão da nota fiscal
 				
-				System.out.println("!!!!Nota Fiscal!!!! \nComprador: "+ p1.getNome() + "\nCNPJ: " + p1.getCpf() + "\n!!!!Relação de Peças!!!!" + "\nQuadro: " + b.getQuadro() + "\nFreio: " + b.getFreio() + "\nCâmbio: "+ b.getCambio() + "\nSuspensão: " + b.getSuspensao() + "\nRoda: " + b.getRoda() + "\nPneus: " + b.getPneu() + "\nKit de Acessórios: " + b.getKitacessorios() + "\nPreço final: R$" + b.getPreco() + "\nObrigado pela preferência!");
+				System.out.println("!!!!Nota Fiscal!!!! \nComprador: "+ p1.getNome() + "\nCNPJ: " 
+				+ p1.getCpf() + "\n!!!!Relação de Peças!!!!" + "\nQuadro: " + b.getQuadro() + "\nFreio: " 
+						+ b.getFreio() + "\nCâmbio: "+ b.getCambio() + "\nSuspensão: " + b.getSuspensao() 
+						+ "\nRoda: " + b.getRoda() + "\nPneus: " + b.getPneu() + "\nKit de Acessórios: " 
+						+ b.getKitacessorios() + "\nPreço final: R$" + b.getPreco() + "\nObrigado pela preferência!");
 
 				var = false;
 				break;
@@ -151,7 +156,7 @@ public class Menu {
 					cnpj = selecao.next();
 				}
 
-				e1.setCnpj(selecao.next());
+				e1.setCnpj(cnpj);
 				System.out.println("Iniciando montagem: ");
 				Bike b1 = new Bike();
 
@@ -187,7 +192,11 @@ public class Menu {
 				
 				//Impressão da nota fiscal
 				
-				System.out.println("!!!!Nota Fiscal!!!! \nComprador: "+ e1.getNome() + "\nCNPJ: " + e1.getCnpj() + "\n!!!!Relação de Peças!!!!" + "\nQuadro: " + b1.getQuadro() + "\nFreio: " + b1.getFreio() + "\nCâmbio: "+ b1.getCambio() + "\nSuspensão: " + b1.getSuspensao() + "\nRoda: " + b1.getRoda() + "\nPneus: " + b1.getPneu() + "\nKit de Acessórios: " + b1.getKitacessorios() + "\nPreço final: R$" + b1.getPreco() + "\nObrigado pela preferência!");
+				System.out.println("!!!!Nota Fiscal!!!! \nComprador: "+ e1.getNome() + "\nCNPJ: " 
+				+ e1.getCnpj() + "\n!!!!Relação de Peças!!!!" + "\nQuadro: " + b1.getQuadro() + "\nFreio: " 
+						+ b1.getFreio() + "\nCâmbio: "+ b1.getCambio() + "\nSuspensão: " + b1.getSuspensao() 
+						+ "\nRoda: " + b1.getRoda() + "\nPneus: " + b1.getPneu() + "\nKit de Acessórios: " 
+						+ b1.getKitacessorios() + "\nPreço final: R$" + b1.getPreco() + "\nObrigado pela preferência!");
 				
 				var = false;
 				break;
@@ -199,6 +208,9 @@ public class Menu {
 			default:
 				System.out.println("opcao invalida");
 				break;
+			}
+			} catch (Exception e) {
+				System.out.println("opcao invalida, erro: " + e);
 			}
 
 		} while (var);

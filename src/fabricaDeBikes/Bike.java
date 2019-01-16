@@ -118,23 +118,23 @@ public class Bike {
 		if (tipo == 1) {
 			this.preco += 100;
 			this.freio = "Freios à disco hidráulico";
-			return ("Freios à disco hidráulico -- R$ 100,00.");
+			return ("Freios à disco hidráulico -- R$ 500,00.");
 		}
 		if (tipo == 2) {
 			this.preco += 50;
-			this.freio = "Freios Cantilever";
-			return ("Freios Cantilever -- R$  50,00.");
+			this.freio = "Freios à disco mecânico";
+			return ("Freios à disco mecânico -- R$  300,00.");
 		}
 		if (tipo == 3) {
 			this.preco += 500;
 			this.freio = "Freios V-Brake";
-			return ("Freios V-Brake -- R$ 500,00");
+			return ("Freios V-Brake -- R$ 200,00");
 		}
 
 		if (tipo == 4) {
 			this.preco += 100;
 			this.freio = "Freios Cantilever";
-			return ("Freios à disco mecânico -- R$ 100,00.");
+			return ("Freios cantilever -- R$ 150,00.");
 		} else {
 			return ("Digite o NÚMERO da opção desejada!");
 
