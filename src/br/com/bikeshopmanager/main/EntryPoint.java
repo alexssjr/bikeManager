@@ -16,10 +16,6 @@ public class EntryPoint {
 		Menu menuPrincipal = new Menu();
 		menuPrincipal.setMenus(listaMenuPrincial);
 		menuPrincipal.apresenta();
-		
-		
-
-		
-
+				
 	}
 }
