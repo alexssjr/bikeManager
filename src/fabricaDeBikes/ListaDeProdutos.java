@@ -22,5 +22,9 @@ public class ListaDeProdutos {
 		quadros.add("1- asdfoihas");
 		quadros.add("1- açsdfh");
 
+		for (List x : quadros) {
+			System.out.println(quadros);
+		}
+
 	}
 }
