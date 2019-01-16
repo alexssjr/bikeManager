@@ -9,13 +9,17 @@ import br.com.bikeshopmanager.model.MenuEnum;
 public class EntryPoint {
 
 	public static void main(String[] args) {
-		LinkedList<MenuEnum> menus = new LinkedList<MenuEnum>();
-		menus.addAll(Arrays.asList(MenuEnum.values()));		
+		LinkedList<MenuEnum> listaMenuPrincial = new LinkedList<MenuEnum>();
+		listaMenuPrincial.add(MenuEnum.CADASTRO);		
+		listaMenuPrincial.add(MenuEnum.MONTAR_BICICLETA);
+		listaMenuPrincial.add(MenuEnum.SAIR);
+		Menu menuPrincipal = new Menu();
+		menuPrincipal.setMenus(listaMenuPrincial);
+		menuPrincipal.apresenta();
 		
-		Menu menu = new Menu();
-		menu.setMenus(menus);
+		
 
-		menu.apresenta();
+		
 
 	}
 }

@@ -1,9 +1,9 @@
 package br.com.bikeshopmanager.menu;
 
 import java.util.InputMismatchException;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.concurrent.ExecutionException;
 
 import br.com.bikeshopmanager.exception.DocumentoException;
 import br.com.bikeshopmanager.model.MenuEnum;
@@ -34,20 +34,30 @@ public class Menu {
 			switch (textoString) {
 			case 1:
 				System.out.println("Opção 1");
+				LinkedList<MenuEnum> listaSecundarioPrincial = new LinkedList<MenuEnum>();
+				listaSecundarioPrincial.add(MenuEnum.CADASTRO_PF);
+				listaSecundarioPrincial.add(MenuEnum.CADASTRO_PJ);
+				listaSecundarioPrincial.add(MenuEnum.SAIR);
+				
+				Menu menuSecondario = new Menu();
+				menuSecondario.setMenus(listaSecundarioPrincial);
+				menuSecondario.apresenta();
+				
 				break;
 			case 3:
+				
+				
 				System.out.println("Tchau");
 				break;
 			default:
 				throw new DocumentoException("Documento Digital inválido");
-//				apresenta();
 //				break;
 			}
 
 		} catch (InputMismatchException e) {
 			System.out.println("Digitou um numero valido");
 //			e.printStackTrace();
-			
+
 		} catch (DocumentoException e) {
 			System.out.println(e.getMessage());
 		} catch (Exception e) {
