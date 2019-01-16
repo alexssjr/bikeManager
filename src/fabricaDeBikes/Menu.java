@@ -22,6 +22,8 @@ public class Menu {
 		List rodas = new LinkedList();
 
 		List pneus = new LinkedList();
+		
+		List kitacessorios = new LinkedList();
 
 		quadros.add("1- ksdjbf ");
 		quadros.add("2- asdfoihas");
@@ -33,10 +35,10 @@ public class Menu {
 		freios.add("4 - ");
 
 		cambios.add("1 - ");
-		cambios.add("1 - ");
-		cambios.add("1 - ");
-		cambios.add("1 - ");
-		cambios.add("1 - ");
+		cambios.add("2 - ");
+		cambios.add("3 - ");
+		cambios.add("4 - ");
+		cambios.add("5 - ");
 
 		suspensoes.add("1 - ");
 		suspensoes.add("2 - ");
@@ -49,6 +51,14 @@ public class Menu {
 		pneus.add("1 - ");
 		pneus.add("2 - ");
 		pneus.add("3 - ");
+		
+		kitacessorios.add("1 - ");
+		kitacessorios.add("2 - ");
+		kitacessorios.add("3 - ");
+		kitacessorios.add("4 - ");
+		
+		
+		
 
 		// INICIO DA MONTAGEM
 
@@ -68,7 +78,7 @@ public class Menu {
 
 			switch (opcao) {
 			case 1:
-				System.out.println("opcao 1 ---");
+				System.out.println("Insira seus dados.");
 				Pessoa p1 = new Pessoa();
 				System.out.println("Entre com seu nome: ");
 				String nome = selecao.next();
@@ -115,9 +125,9 @@ public class Menu {
 				var = false;
 				break;
 			case 2:
-				System.out.println("opcao 2 ***");
+				System.out.println("Compra empresarial");
 				Empresa e1 = new Empresa();
-				System.out.println("Entre com seu nome: ");
+				System.out.println("Qual o nome da empresa: ");
 				String nomeEmpresa = selecao.next();
 
 				while (!nomeEmpresa.matches("[a-zA-Z\\s]+")) {
@@ -127,10 +137,12 @@ public class Menu {
 				e1.setNome(nomeEmpresa);
 				System.out.println("Entre com seu cnpj: ");
 				String cnpj = selecao.next();
+
 				while (!cnpj.matches("[0-9]+")) {
 					System.out.println("Nome contém caracteres inválidos");
 					cnpj = selecao.next();
 				}
+
 				e1.setCnpj(selecao.next());
 				System.out.println("Iniciando montagem: ");
 				Bike b1 = new Bike();
@@ -158,7 +170,17 @@ public class Menu {
 				System.out.println("Escolha o Pneu desejado: ");
 				System.out.println(pneus);
 				b1.addPneu(selecao.nextInt());
-
+				
+				System.out.println("Escolha o Kit de Acessórios desejado: ");
+				System.out.println(kitacessorios);
+				b1.addKitacessorios(selecao.nextInt());
+				
+				
+				
+				//Impressão da nota fiscal
+				
+				System.out.println("##Nota Fiscal## \nComprador: "+ e1.getNome() + "\nCNPJ: " + e1.getCnpj() + "\nRelação de Peças" + "\nQuadro: " + b1.getQuadro() + "\nFreio: " + b1.getFreio() + "\nCâmbio: "+ b1.getCambio() + "\nSuspensão: " + b1.getSuspensao() + "\nRoda: " + b1.getRoda() + "\nPneus: " + b1.getPneu() + "\nKit de Acessórios: " + b1.getKitacessorios());
+				
 				var = false;
 				break;
 
@@ -172,5 +194,7 @@ public class Menu {
 			}
 
 		} while (var);
+		
+		
 	}
 }

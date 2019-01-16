@@ -14,11 +14,19 @@ public class Bike {
 	private double preco;
 	private double tamanho;
 	private String suspensao;
-	private String SelimGuidão;
 	private String roda;
 	private String pneu;
+	private String kitacessorios;
 
 	// GETTERS AND SETTERS
+
+	public String getKitacessorios() {
+		return kitacessorios;
+	}
+
+	public void setKitacessorios(String kitacessorios) {
+		this.kitacessorios = kitacessorios;
+	}
 
 	public String getSuspensao() {
 		return suspensao;
@@ -26,14 +34,6 @@ public class Bike {
 
 	public void setSuspensao(String suspensao) {
 		this.suspensao = suspensao;
-	}
-
-	public String getSelimGuidão() {
-		return SelimGuidão;
-	}
-
-	public void setSelimGuidão(String selimGuidão) {
-		SelimGuidão = selimGuidão;
 	}
 
 	public String getRoda() {
@@ -247,5 +247,36 @@ public class Bike {
 			return ("Digite o NÚMERO da opção desejada!");
 		}
 
+	}
+
+	public String addKitacessorios(int k) {
+		if (k == 1) {
+			this.preco += 300;
+			this.kitacessorios = "kit1";
+			return ("kit1 -- R$ 300,00");
+		}
+
+		if (k == 2) {
+			this.preco += 300;
+			this.kitacessorios = "kit2";
+			return ("kit2 -- R$ 300,00");
+		}
+		if (k == 3) {
+			this.preco += 300;
+			this.kitacessorios = "kit3";
+			return ("kit3 -- R$ 300,00");
+		}
+		if (k == 4) {
+			this.preco += 300;
+			this.kitacessorios = "kit4";
+			return ("kit4 -- R$ 300,00");
+		}
+		if (k == 5) {
+			this.preco += 300;
+			this.kitacessorios = "kit5";
+			return ("kit5 -- R$ 300,00");
+		} else {
+			return ("Digite o NÚMERO da opção desejada!");
+		}
 	}
 }
