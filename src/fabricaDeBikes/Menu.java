@@ -91,8 +91,13 @@ public class Menu {
 				p1.setNome(nome);
 				System.out.println("Entre com seu cpf: ");
 				String cpf = selecao.next();
+<<<<<<< HEAD
 				while (!cpf.matches("[0-9]{3}\\.?[0-9]{3}\\.?[0-9]{3}\\-?[0-9]{2}")) {
 					System.out.println("Nome contém caracteres inválidos");
+=======
+				while (!cpf.matches("[0-9]+")) {
+					System.out.println("CPF contém caracteres inválidos");
+>>>>>>> edf4375bb82bba7ce22bc87fc2751f5b965c15ae
 					cpf = selecao.next();
 				}
 				p1.setCpf(cpf);
@@ -152,7 +157,7 @@ public class Menu {
 				String cnpj = selecao.next();
 
 				while (!cnpj.matches("[0-9]+")) {
-					System.out.println("Nome contém caracteres inválidos");
+					System.out.println("CNPJ contém caracteres inválidos");
 					cnpj = selecao.next();
 				}
 
