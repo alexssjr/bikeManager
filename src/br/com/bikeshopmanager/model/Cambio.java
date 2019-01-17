@@ -1,6 +1,6 @@
 package br.com.bikeshopmanager.model;
 
-public class Roda implements Item {
+public class Cambio implements Item {
 
 	@Override
 	public double getPreco() {

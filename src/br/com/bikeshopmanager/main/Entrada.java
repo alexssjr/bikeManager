@@ -1,15 +1,15 @@
 package br.com.bikeshopmanager.main;
 
-import java.util.LinkedList;
 import java.util.Scanner;
 
-import br.com.bikeshopmanager.menu.Menu;
 import br.com.bikeshopmanager.menu.MontarBicicleta;
-import br.com.bikeshopmanager.model.MenuEnum;
 
 public class Entrada {
 
 	public static void main(String[] args) {
+		
+		MontarBicicleta montadorBicicleta = new MontarBicicleta();
+		
 		System.out.println("Bem Vindo ao Sistema!");
 		int x = 0;
 		@SuppressWarnings("resource")
@@ -27,7 +27,8 @@ public class Entrada {
 			System.out.println("Entrou no cadastro");
 			break;
 		case 2:
-			MontarBicicleta.montagem();;
+			montadorBicicleta.montagem();
+			
 			System.out.println("Entrou na montagem");
 
 			break;
