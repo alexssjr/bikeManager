@@ -13,7 +13,6 @@ public enum MenuEnum {
 	QUADRO(1, "Quadro Bicicleta"), CAMBIO(2, "Câmbio Bicicleta") , SUSPENSAO(3, "Suspensão") , FREIO(4, "Kit freio") , 
 	RODA(5, "Roda"), PNEU(6, "Pneu") , ACESSORIOS(7, "Kit Acessórios");
 	
-	private String kitacessorios;
 	
 	private Integer codigo;
 	private String nome;
